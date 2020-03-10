@@ -1,7 +1,12 @@
 .DEFAULT_GOAL 	:= help
 
+year			:= 1936
+
 list: ## download the page of flag baerers per country
 	python list_downloader.py
+
+countries: ## download the page of flag baerers per country
+	python countries_downloader.py -y $(year)
 
 view: ## display the Makefile
 	@cat Makefile
